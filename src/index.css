@@ -9,3 +9,6 @@
 body {
   background: #353434;
 }
+.hovered {
+  background-color: blue;
+}

@@ -24,9 +24,9 @@ function App() {
   }, [length, numberAllowed, charAllowed, setPassword]);
 
   const copyPasswordToClipboard = useCallback(() => {
-    passwordRef.current?.select();
-    passwordRef.current?.setSelectionRange(0, 999);
-    window.navigator.clipboard.writeText(password);
+    passwordRef.current?.select(); //it give the background of the selected item
+    passwordRef.current?.setSelectionRange(0, 999); //it give the range of selection
+    window.navigator.clipboard.writeText(password); //it copy to clipboard
   }, [password]);
 
   useEffect(() => {
@@ -45,9 +45,10 @@ function App() {
           readOnly
           ref={passwordRef}
         />
+
         <button
           onClick={copyPasswordToClipboard}
-          className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0"
+          className="outline-none bg-blue-700 text-white px-3 py-0.5 shrink-0 hover:bg-blue-900 "
         >
           copy
         </button>
